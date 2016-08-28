@@ -3,7 +3,7 @@
         "name": "root",
         "url": "/",
         "views": {
-            "head":{},
+            "head": {},
             "body": {}
         }
     },
@@ -11,7 +11,7 @@
         "name": "root.assessments",
         "url": "provas/",
         "views": {
-            "head@":{
+            "head@": {
                 "template": "<h1>Escolha sua prova =)</h1>"
             },
             "body@": {
@@ -36,7 +36,7 @@
         "name": "root.assessment.sendUserAnswers",
         "url": "preencherGabarito/",
         "views": {
-            "head@" :{
+            "head@": {
                 "template": "<h1>Preencha seu gabarito</h1><p>Coloque o nome no final, e não deixe nenhuma questão em branco ;)</p><p>Nas questões de língua espanhola, marque qualquer coisa. Só vamos contar as respostas de uma das provas de língua estrangeira</p>"
             },
             "body@": {
@@ -46,7 +46,7 @@
         }
     },
     {
-        "name": "root.assessment.checkUserPerformance",
+        "name": "root.assessment.checkUserPerformanceDEPRECATED",
         "url": "desempenho/",
         "views": {
             "head@": {
@@ -54,6 +54,28 @@
             },
             "body@": {
                 "template": "<p>Paciência é uma virtude</p><p><del>O gabarito estará aqui até domingo (dia 28/08)</del> Desculpa. --' Ainda não estou com o gabarito</p>"
+            }
+        }
+    },
+    {
+        "name": "root.assessment.checkUserPerformance",
+        "url": "TESTE/",
+        "views": {
+            "head@": {
+                "template": "Testando o processamento das respostas dos alunos"
+            },
+            "body@": {
+                "templateUrl": "views/userList.html",
+                "controller": "userListController"
+            }
+        }
+    },
+    {
+        "name": "root.assessment.checkUserPerformance.individualUser",
+        "url": ":username/",
+        "views": {
+            "body@": {
+                "template": "<h1>Dados do aluno aqui</h1>"
             }
         }
     }

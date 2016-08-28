@@ -90,4 +90,10 @@ angular.module("assessmentAnalysis")
                 }
             };
         }
+    ])
+    //
+    .controller("userListController", ["$scope", "$stateParams", "StatisticsFactory",
+        function ($scope, $stateParams, StatisticsFactory) {
+            $scope.userList = StatisticsFactory.getUserList();
+        }
     ]);
