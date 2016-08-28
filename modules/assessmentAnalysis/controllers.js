@@ -3,7 +3,7 @@ angular.module("assessmentAnalysis")
     .controller("AssessmentListController", ["$scope", "AssessmentFactory", "$timeout",
         function ($scope, AssessmentFactory, $timeout) {
             $scope.assessments = [];
-            AssessmentFactory.getAssessments().then(
+            AssessmentFactory.getAssessmentList().then(
                 function (response) {
                     $scope.assessments = response;
                 }
@@ -23,7 +23,7 @@ angular.module("assessmentAnalysis")
             /**
              * Fazer o download de $scope.currentAssessment e montar o $scope.userAnswers
              */
-            AssessmentFactory.getAssessments().then(
+            AssessmentFactory.getAssessmentList().then(
                 function (response) {
                     var notFound = true;
                     for (var i = 0; i < response.length && notFound; i++) {

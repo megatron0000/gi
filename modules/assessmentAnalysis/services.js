@@ -4,13 +4,20 @@ angular.module("assessmentAnalysis")
     .service("AssessmentFactory", ["$http", "baseURL",
         function ($http, baseURL) {
 
-            this.getAssessments = function () {
-                var no_cache = "?no_cache=" + new Date().toString();
-                return $http.get(baseURL + "database/assessmentData/answerSheets.json" + no_cache).then(function (response) {
+            var no_cache = function() {
+                return "?no_cache=" + new Date().toString();
+            };
+
+            this.getAssessmentList = function () {
+                return $http.get(baseURL + "database/assessmentData/answerSheets.json" + no_cache()).then(function (response) {
                     return response.data;
                 }, function (response) {
                     alert("Erro no recebimento de dados... recarregue a página.");
                 });
+            };
+
+            this.getAssessment = function(assessmentId) {
+                
             };
 
             this.uploadAnswers = function (answerObj) {
@@ -26,8 +33,7 @@ angular.module("assessmentAnalysis")
         function ($http, baseURL) {
 
             this.getRecord = function () {
-                var no_cache = "?no_cache=" + new Date().toString();
-                return $http.get(baseURL + "database/assessmentData/userAnswers.json" + no_cache).then(function (response) {
+                return $http.get(baseURL + "database/assessmentData/userAnswers.json" + no_cache()).then(function (response) {
                     return response.data;
                 }, function (response) {
                     alert("Erro no recebimento de dados... recarregue a página.");
@@ -53,6 +59,10 @@ angular.module("assessmentAnalysis")
                     });
                 });
                 return userList;
+            };
+
+            this.getEvaluatedQuestions = function(assessmentId, username) {
+
             };
 
         }
