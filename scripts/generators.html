@@ -1,0 +1,17 @@
+<html>
+<body>
+</body>
+<script>
+	var howManyQuestions = 63;
+	var correctAnswerArray = ["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a"];
+	var returnValue = [];
+	for (var i = 1 ; i <= howManyQuestions ; i++) {
+		returnValue.push({
+			"questionNumber": i,
+			"possibleAnswers": ["a", "b", "c", "d", "e"],
+			"correctAnswer": correctAnswerArray[i-1]
+		});
+	}
+	console.log(JSON.stringify(returnValue));
+</script>
+</html>

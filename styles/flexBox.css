@@ -1,0 +1,58 @@
+.flex-row, .flex-column {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+/*
+	Desnecessário, porque já é comportamento default
+*/
+.flex-no-wrap {
+	flex-wrap: nowrap;
+}
+
+.flex-align-items-center {
+	align-items: center;
+}
+
+.flex-align-items-start {
+    align-items: flex-start;
+}
+
+.flex-justify-content-center {
+	justify-content: center;
+}
+
+.flex-justify-content-start {
+    justify-content: flex-start;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-grow-2 {
+    flex-grow: 2;
+}
+
+.flex-height-xs {
+    height: 25px;
+}
+
+.flex-height-sm {
+    height: 50px;
+}
+
+.flex-height-md {
+    height: 100px;
+}
+
+.flex-height-lg {
+    height: 150px;
+}

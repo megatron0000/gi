@@ -1,0 +1,1 @@
+angular.module("assessmentAnalysis", ["ui.router"]);

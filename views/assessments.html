@@ -1,0 +1,7 @@
+<div ng-repeat="assessment in assessments | orderBy: 'assessmentId'" style="display:flex;flex-direction:column;width:100%;">
+    <button class="btn btn-info" style="flex-grow:1;height:100px !important;margin-bottom:5px;" ui-sref="root.assessment({assessmentId: assessment.assessmentId})">
+        <h2 style="margin:0">
+            {{assessment.name}}
+        </h2>
+    </button>
+</div>

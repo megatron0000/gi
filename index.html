@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="width=device-width,initial-scale=1" name="viewport"/>
+        <!-- Bootstrap -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" rel="stylesheet"/>
+        <!-- Treant -->
+        <link href="../plugins/Treant/Treant.css" rel="stylesheet"/>
+        <!-- Estilo mestre do site inteiro -->
+        <link href="../wsiteCSS.css" rel="stylesheet" type="text/css"/>
+        <link href="styles/typography.css" rel="stylesheet"/>
+        <link href="styles/backgrounds.css" rel="stylesheet"/>
+        <link href="styles/flexBox.css" rel="stylesheet"/>
+    </head>
+    <body elem-ready="unApply()" ng-class="{flash: isApplied}" ng-controller="LoadWaitController">
+        <div class="jumbotron">
+            <div class="container" ui-view="head">
+                <h1>
+                    Site do GI
+                </h1>
+                <p>
+                    Sei lá o que vai ter aqui...
+                </p>
+            </div>
+        </div>
+        <!-- container da página inteira, exceto o footer-->
+        <div class="container-fluid wsite-content">
+            <div ui-view="body">
+                <div style="display:flex; flex-direction:column;">
+                    <button class="btn btn-success" style="width:100% !important; flex-grow:1; height:100px; margin-bottom:5px;" ui-sref="root.assessments">
+                        <h2 style="margin:0">
+                            Provas
+                        </h2>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid.wsite-content -->
+        <div class="footer-wrap">
+            <h3>
+                Baú de Laplace
+            </h3>
+        </div>
+        <!-- MathJax -->
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+        </script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+        </script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+        </script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script crossorigin="anonymous" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+        </script>
+        <!-- Font-Awesome -->
+        <script src="https://use.fontawesome.com/5a33133180.js">
+        </script>
+        <!-- p5.js -->
+        <!-- <script src="../plugins/p5.js"> -->
+        <!-- Treant.js -->
+        <script src="../plugins/Treant/Treant.js">
+        </script>
+        <script src="../plugins/Treant/vendor/raphael.js">
+        </script>
+        <!-- angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" type="text/javascript">
+        </script>
+        <!-- angular ui.router -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js">
+        </script>
+        <!-- angular build -->
+        <script src="modules/main/app.js">
+        </script>
+        <script src="modules/main/controllers.js">
+        </script>
+        <script src="modules/main/services.js">
+        </script>
+        <script src="modules/assessmentAnalysis/app.js">
+        </script>
+        <script src="modules/assessmentAnalysis/controllers.js">
+        </script>
+        <script src="modules/assessmentAnalysis/services.js">
+        </script>
+        <script src="modules/angular-treant/app.js">
+        </script>
+        <script src="modules/dynamic-states/app.js">
+        </script>
+        <script src="modules/angular-MathJax/app.js">
+        </script>
+        <script src="modules/angular-event-dispatcher/app.js">
+        </script>
+        <script src="modules/element-ready/app.js">
+        </script>
+        <!-- end build -->
+        <!-- Google Analytics -->
+        <script src="scripts/googleAnalytics.js">
+        </script>
+    </body>
+</html>
