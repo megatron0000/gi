@@ -94,7 +94,7 @@ angular.module("assessmentAnalysis")
         }
     ])
     //
-    .service("StatisticsFactory", ["$q", "AssessmentFactory", "AnswerRecordFactory",
+    .service("UserStatisticsFactory", ["$q", "AssessmentFactory", "AnswerRecordFactory",
         function ($q, AssessmentFactory, AnswerRecordFactory) {
 
             this.getUserList = function (assessmentId) {
@@ -102,7 +102,7 @@ angular.module("assessmentAnalysis")
                     assessmentId = parseInt(assessmentId);
                 }
                 var userList = [];
-                AnswerRecordFactory.getRecord().then(
+                return AnswerRecordFactory.getRecord().then(
                     function (response) {
                         if (!response) {
                             return [];
@@ -112,9 +112,9 @@ angular.module("assessmentAnalysis")
                                 userList.push(current.username);
                             }
                         });
+                        return userList;
                     }
                 );
-                return userList;
             };
 
             this.getEvaluatedQuestions = function (assessmentId, username) {
@@ -227,8 +227,13 @@ angular.module("assessmentAnalysis")
                         return $q.reject();
                     }
                 );
-
             };
 
+        }
+    ])
+    //
+    .service("GroupStatisticsFactory", ["UserStatisticsFactory", "$q",
+        function (UserStatisticsFactory, $q) {
+            //
         }
     ]);

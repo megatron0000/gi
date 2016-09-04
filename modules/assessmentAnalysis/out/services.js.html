@@ -122,7 +122,7 @@ angular.module("assessmentAnalysis")
         }
     ])
     //
-    .service("StatisticsFactory", ["$q", "AssessmentFactory", "AnswerRecordFactory",
+    .service("UserStatisticsFactory", ["$q", "AssessmentFactory", "AnswerRecordFactory",
         function ($q, AssessmentFactory, AnswerRecordFactory) {
 
             this.getUserList = function (assessmentId) {

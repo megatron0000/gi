@@ -82,17 +82,22 @@ angular.module("assessmentAnalysis")
         }
     ])
     //
-    .controller("UserListController", ["$scope", "$stateParams", "StatisticsFactory",
-        function ($scope, $stateParams, StatisticsFactory) {
-            $scope.userList = StatisticsFactory.getUserList($stateParams.assessmentId);
+    .controller("UserListController", ["$scope", "$stateParams", "UserStatisticsFactory",
+        function ($scope, $stateParams, UserStatisticsFactory) {
+            $scope.userList = [];
+            UserStatisticsFactory.getUserList($stateParams.assessmentId).then(
+                function (response) {
+                    $scope.userList = response;
+                }
+            );
         }
     ])
     //
-    .controller("EvaluatedAnswersController", ["$scope", "StatisticsFactory", "$stateParams",
-        function ($scope, StatisticsFactory, $stateParams) {
+    .controller("EvaluatedAnswersController", ["$scope", "UserStatisticsFactory", "$stateParams",
+        function ($scope, UserStatisticsFactory, $stateParams) {
 
             $scope.evaluatedQuestionList = [];
-            StatisticsFactory.getEvaluatedQuestions($stateParams.assessmentId, $stateParams.username).then(
+            UserStatisticsFactory.getEvaluatedQuestions($stateParams.assessmentId, $stateParams.username).then(
                 function (response) {
                     $scope.evaluatedQuestionList = response;
                     $scope.correctCount = (function () {
@@ -114,12 +119,21 @@ angular.module("assessmentAnalysis")
 
 
             $scope.sortedQuestionList = [];
-            StatisticsFactory.getSortedQuestions($stateParams.assessmentId, $stateParams.username).then(
+            UserStatisticsFactory.getSortedQuestions($stateParams.assessmentId, $stateParams.username).then(
                 function (sortedQuestionList) {
                     $scope.sortedQuestionList = sortedQuestionList;
                     console.debug(sortedQuestionList);
                 }
             );
+
+
+        }
+    ])
+    //
+    .controller("GroupStatisticsController", ["$scope", "GroupStatisticsFactory",
+        function ($scope, GroupStatisticsFactory) {
+
+            $scope.selectedAssessment = 0;
 
 
         }
