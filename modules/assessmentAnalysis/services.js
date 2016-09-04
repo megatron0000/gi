@@ -8,12 +8,8 @@ angular.module("assessmentAnalysis")
     .service("AssessmentFactory", ["$http", "baseURL", "$q",
         function ($http, baseURL, $q) {
 
-            var no_cache = function () {
-                return "?no_cache=" + new Date().toString();
-            };
-
             this.getAssessmentList = function () {
-                return $http.get(baseURL + "database/assessmentData/answerSheets.json" + no_cache()).then(
+                return $http.get(baseURL + "database/assessmentData/answerSheets.json").then(
                     function (response) {
                         return response.data;
                     },
@@ -56,12 +52,8 @@ angular.module("assessmentAnalysis")
     .service("AnswerRecordFactory", ["$http", "baseURL", "$q",
         function ($http, baseURL, $q) {
 
-            var no_cache = function () {
-                return "?no_cache=" + new Date().toString();
-            };
-
             this.getRecord = function () {
-                return $http.get(baseURL + "database/assessmentData/userAnswers.json" + no_cache()).then(
+                return $http.get(baseURL + "database/assessmentData/userAnswers.json").then(
                     function (response) {
                         return response.data;
                     },
@@ -113,6 +105,10 @@ angular.module("assessmentAnalysis")
                             }
                         });
                         return userList;
+                    },
+                    function () {
+                        alert("Não foi possível encontrar quem fez esta prova...\nRecarregue a página.");
+                        return $q.reject();
                     }
                 );
             };
@@ -234,6 +230,8 @@ angular.module("assessmentAnalysis")
     //
     .service("GroupStatisticsFactory", ["UserStatisticsFactory", "$q",
         function (UserStatisticsFactory, $q) {
-            //
+            
+            //this.
+
         }
     ]);
