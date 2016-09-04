@@ -1,4 +1,4 @@
-.flex-row, .flex-column {
+.flex {
     display: flex;
 }
 
@@ -13,8 +13,8 @@
 /*
 	Desnecessário, porque já é comportamento default
 */
-.flex-no-wrap {
-	flex-wrap: nowrap;
+.flex-wrap {
+	flex-wrap: wrap;
 }
 
 .flex-align-items-center {

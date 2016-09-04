@@ -4,255 +4,318 @@
     "questions": [{
         "questionNumber": 1,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "História"
     }, {
         "questionNumber": 2,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Filosofia/Sociologia"
     }, {
         "questionNumber": 3,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Filosofia/Sociologia"
     }, {
         "questionNumber": 4,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Geografia"
     }, {
         "questionNumber": 5,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Geografia"
     }, {
         "questionNumber": 6,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Geografia"
     }, {
         "questionNumber": 7,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "História"
     }, {
         "questionNumber": 8,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "História"
     }, {
         "questionNumber": 9,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Geografia"
     }, {
         "questionNumber": 10,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "História"
     }, {
         "questionNumber": 11,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Filosofia/Sociologia"
     }, {
         "questionNumber": 12,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Geografia"
     }, {
         "questionNumber": 13,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "História"
     }, {
         "questionNumber": 14,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Filosofia/Sociologia"
     }, {
         "questionNumber": 15,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "História"
     }, {
         "questionNumber": 16,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Biologia"
     }, {
         "questionNumber": 17,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Física"
     }, {
         "questionNumber": 18,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Química"
     }, {
         "questionNumber": 19,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Física"
     }, {
         "questionNumber": 20,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Biologia"
     }, {
         "questionNumber": 21,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 22,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Física"
     }, {
         "questionNumber": 23,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Biologia"
     }, {
         "questionNumber": 24,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Química"
     }, {
         "questionNumber": 25,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Biologia"
     }, {
         "questionNumber": 26,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Física"
     }, {
         "questionNumber": 27,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Química"
     }, {
         "questionNumber": 28,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Biologia"
     }, {
         "questionNumber": 29,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Física"
     }, {
         "questionNumber": 30,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Química"
     }, {
         "questionNumber": 31,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Matemática"
     }, {
         "questionNumber": 32,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 33,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Física"
     }, {
         "questionNumber": 34,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Matemática"
     }, {
         "questionNumber": 35,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Matemática"
     }, {
         "questionNumber": 36,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Matemática"
     }, {
         "questionNumber": 37,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Física"
     }, {
         "questionNumber": 38,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Matemática"
     }, {
         "questionNumber": 39,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 40,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Matemática"
     }, {
         "questionNumber": 41,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Matemática"
     }, {
         "questionNumber": 42,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 43,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Matemática"
     }, {
         "questionNumber": 44,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 45,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Matemática"
     }, {
         "questionNumber": 46,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 47,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 48,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 49,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 50,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 51,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 52,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 53,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 54,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 55,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 56,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 57,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 58,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Inglês"
     }, {
         "questionNumber": 59,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Inglês"
     }, {
         "questionNumber": 60,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Inglês"
     }, {
         "questionNumber": 61,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Espanhol"
     }, {
         "questionNumber": 62,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Espanhol"
     }, {
         "questionNumber": 63,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Espanhol"
     }]
 }, {
     "name": "2º ano: Prova 1",
@@ -260,254 +323,317 @@
     "questions": [{
         "questionNumber": 1,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "História"
     }, {
         "questionNumber": 2,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Filosofia/Sociologia"
     }, {
         "questionNumber": 3,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Filosofia/Sociologia"
     }, {
         "questionNumber": 4,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Geografia"
     }, {
         "questionNumber": 5,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Geografia"
     }, {
         "questionNumber": 6,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Geografia"
     }, {
         "questionNumber": 7,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "História"
     }, {
         "questionNumber": 8,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "História"
     }, {
         "questionNumber": 9,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Geografia"
     }, {
         "questionNumber": 10,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "História"
     }, {
         "questionNumber": 11,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Geografia"
     }, {
         "questionNumber": 12,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Geografia"
     }, {
         "questionNumber": 13,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Geografia"
     }, {
         "questionNumber": 14,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Filosofia/Sociologia"
     }, {
         "questionNumber": 15,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Geografia"
     }, {
         "questionNumber": 16,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Biologia"
     }, {
         "questionNumber": 17,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Química"
     }, {
         "questionNumber": 18,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Física"
     }, {
         "questionNumber": 19,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Física"
     }, {
         "questionNumber": 20,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Química"
     }, {
         "questionNumber": 21,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Química"
     }, {
         "questionNumber": 22,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Física"
     }, {
         "questionNumber": 23,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Biologia"
     }, {
         "questionNumber": 24,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Química"
     }, {
         "questionNumber": 25,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Biologia"
     }, {
         "questionNumber": 26,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Física"
     }, {
         "questionNumber": 27,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Química"
     }, {
         "questionNumber": 28,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Biologia"
     }, {
         "questionNumber": 29,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Física"
     }, {
         "questionNumber": 30,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Biologia"
     }, {
         "questionNumber": 31,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Matemática"
     }, {
         "questionNumber": 32,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Matemática"
     }, {
         "questionNumber": 33,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Matemática"
     }, {
         "questionNumber": 34,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 35,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 36,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 37,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 38,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Matemática"
     }, {
         "questionNumber": 39,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 40,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 41,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 42,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 43,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Matemática"
     }, {
         "questionNumber": 44,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Matemática"
     }, {
         "questionNumber": 45,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Matemática"
     }, {
         "questionNumber": 46,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 47,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 48,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 49,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 50,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 51,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 52,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "d",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 53,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 54,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 55,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 56,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 57,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Português/Literatura"
     }, {
         "questionNumber": 58,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "a",
+        "subject": "Inglês"
     }, {
         "questionNumber": 59,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Inglês"
     }, {
         "questionNumber": 60,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Inglês"
     }, {
         "questionNumber": 61,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "b",
+        "subject": "Espanhol"
     }, {
         "questionNumber": 62,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "c",
+        "subject": "Espanhol"
     }, {
         "questionNumber": 63,
         "possibleAnswers": ["a", "b", "c", "d", "e"],
-        "correctAnswer": "a"
+        "correctAnswer": "e",
+        "subject": "Espanhol"
     }]
 }]

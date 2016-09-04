@@ -46,27 +46,15 @@
         }
     },
     {
-        "name": "root.assessment.checkUserPerformanceDEPRECATED",
+        "name": "root.assessment.checkUserPerformance",
         "url": "desempenho/",
         "views": {
             "head@": {
-                "template": "<h1>Ainda não programei #_#</h1>"
-            },
-            "body@": {
-                "template": "<p>Paciência é uma virtude</p><p><del>O gabarito estará aqui até domingo (dia 28/08)</del> Desculpa. --' Ainda não estou com o gabarito</p>"
-            }
-        }
-    },
-    {
-        "name": "root.assessment.checkUserPerformance",
-        "url": "TESTE/",
-        "views": {
-            "head@": {
-                "template": "Testando o processamento das respostas dos alunos"
+                "template": "<h1>Quem é você ?</h1>"
             },
             "body@": {
                 "templateUrl": "views/userList.html",
-                "controller": "userListController"
+                "controller": "UserListController"
             }
         }
     },
@@ -74,8 +62,25 @@
         "name": "root.assessment.checkUserPerformance.individualUser",
         "url": ":username/",
         "views": {
+            "head@": {
+                "template": "<h1>Logo, logo, análises mais completas do que um simples gabarito...</h1>"
+            },
             "body@": {
-                "template": "<h1>Dados do aluno aqui</h1>"
+                "templateUrl": "views/userPerformance.html",
+                "controller": "EvaluatedAnswersController"
+            }
+        }
+    },
+    {
+        "name": "root.assessment.checkUserPerformance.individualUserTEST",
+        "url": ":username/TEST",
+        "views": {
+            "head@": {
+                "template": "<h1>Logo, logo, análises mais completas do que um simples gabarito...</h1>"
+            },
+            "body@": {
+                "templateUrl": "views/userPerformanceTEST.html",
+                "controller": "EvaluatedAnswersController"
             }
         }
     }

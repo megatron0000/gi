@@ -3,15 +3,21 @@
 </body>
 <script>
 	var howManyQuestions = 63;
-	var correctAnswerArray = ["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a"];
+	var correctAnswerArray = ["c","a","e","e","a","d","b","c","b","a","b","c","d","b","e","e","e","e","c","c","b","e","d","e","c","a","c","b","d","e","b","c","b","d","d","d","d","a","d","d","d","d","d","a","c","d","e","a","e","b","e","d","a","c","b","e","e","a","e","b","b","c","e"];
 	var returnValue = [];
+	var printCategory = function(boundaryList) {
+
+	};
+
 	for (var i = 1 ; i <= howManyQuestions ; i++) {
 		returnValue.push({
 			"questionNumber": i,
 			"possibleAnswers": ["a", "b", "c", "d", "e"],
-			"correctAnswer": correctAnswerArray[i-1]
+			"correctAnswer": correctAnswerArray[i-1],
+			"category": ""
 		});
 	}
 	console.log(JSON.stringify(returnValue));
+
 </script>
 </html>

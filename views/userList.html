@@ -1,9 +1,9 @@
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
     <div ng-repeat="username in userList">
         <button class="btn btn-default" style="height:40px !important;margin:10px;" ui-sref="root.assessment.checkUserPerformance.individualUser({username: username})">
-            <h3 style="margin:0">
+            <h4 style="margin:0">
                 {{username}}
-            </h3>
+            </h4>
         </button>
     </div>
 </div>
