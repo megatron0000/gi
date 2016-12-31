@@ -22,8 +22,8 @@
             </label>
         </div>
         <div class="form-group">
-            <button class="btn btn-success" ng-click="submitUserAnswers()" type="submit">
-                Enviar gabarito
+            <button class="btn btn-success" ng-click="submitUserAnswers()" type="submit" ng-disabled="submitButtonDisabled">
+                {{submitButtonMessage}}
             </button>
         </div>
     </div>

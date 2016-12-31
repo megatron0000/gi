@@ -1,0 +1,24 @@
+<h1>
+	Prova escolhida
+</h1>
+<select ng-options="assessment.assessmentId as assessment.assessmentId for assessment in assessments" ng-model="selectedAssessment"></select>
+
+<h1>
+	Ordem dos alunos
+</h1>
+<p style="white-space: pre-wrap;">
+{{userOrderList}}
+</p>
+
+<h1>$scope.assessmentOverallPerformance</h1>
+<p style="white-space: pre-wrap;">
+{{assessmentOverallPerformance}}
+</p>
+
+<h1>$scope.assessmentOverallMatrix</h1>
+<p style="white-space: pre-wrap;">
+{{assessmentOverallMatrix}}
+</p>
+
+<highchart config="questionListChart.config">
+</highchart>

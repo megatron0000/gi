@@ -1,0 +1,4 @@
+**.swp
+temp/
+node_modules/
+*.sublime-*

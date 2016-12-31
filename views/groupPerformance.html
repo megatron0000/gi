@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Desempenho das turmas
+                <a class="pull-right fa fa-md" data-target="#overallPerformanceCollapsable" data-toggle="collapse" href="" ng-class="{'fa-arrow-down': contentContracted, 'fa-arrow-up': !contentContracted}" ng-click="contentContracted = !contentContracted" ng-init="contentContracted = false" style="text-decoration:none; color:white; box-sizing: border-box;">
+                </a>
+            </div>
+            <div class="panel-body">
+                <div class="collapse in" id="overallPerformanceCollapsable">
+                    <select class="form-control" ng-model="performanceChart.selectedAssessment" ng-options="assessment.assessmentId as assessment.name for assessment in assessments">
+                    </select>
+                    <p>
+                        <!-- Espaçamento -->
+                    </p>
+                    <highchart config="performanceChart.config">
+                    </highchart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                Desempenho das questões
+                <a class="pull-right fa fa-md" data-target="#questionPerformanceCollapsable" data-toggle="collapse" href="" ng-class="{'fa-arrow-down': contentContracted, 'fa-arrow-up': !contentContracted}" ng-click="contentContracted = !contentContracted" ng-init="contentContracted = false" style="text-decoration:none; color:white; box-sizing: border-box;">
+                </a>
+            </div>
+            <div class="panel-body">
+                <div class="collapse in" id="questionPerformanceCollapsable">
+                    <select class="form-control" ng-model="questionListChart.selectedAssessment" ng-options="assessment.assessmentId as assessment.name for assessment in assessments">
+                    </select>
+                    <p>
+                        <!-- Espaçamento -->
+                    </p>
+                    <highchart config="questionListChart.config">
+                    </highchart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

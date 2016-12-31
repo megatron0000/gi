@@ -2,19 +2,17 @@
 var $stateProviderRef = null;
 angular.module('dynamic-states', ['ui.router'])
     //
-    .config(function($locationProvider, $urlRouterProvider, $stateProvider)
-    {
+    .config(function ($locationProvider, $urlRouterProvider, $stateProvider) {
         $urlRouterProvider.deferIntercept();
         $urlRouterProvider.otherwise('/');
-        $locationProvider.html5Mode(
-        {
+        $locationProvider.html5Mode({
             enabled: false
         });
         $stateProviderRef = $stateProvider;
     })
     //
     .run(['$rootScope', '$state', '$stateParams',
-        function($rootScope, $state, $stateParams)
+        function ($rootScope, $state, $stateParams)
         {
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
@@ -22,13 +20,13 @@ angular.module('dynamic-states', ['ui.router'])
     ])
     //
     .run(['$q', '$rootScope', '$http', '$urlRouter', 'dynamic_states_dbLocation', 'baseURL',
-        function($q, $rootScope, $http, $urlRouter, dynamic_states_dbLocation, baseURL)
+        function ($q, $rootScope, $http, $urlRouter, dynamic_states_dbLocation, baseURL)
         {
-            $http.get(baseURL + dynamic_states_dbLocation).success(function(data)
-            {
-                
-                angular.forEach(data, function(value, key)
-                {
+            $http.get(baseURL + dynamic_states_dbLocation).then(function (data) {
+                // Meio confuso, mas a questão é que o argumento deste "success handler" é uma promise com um dos campos sendo "data"
+                data = data.data;
+
+                angular.forEach(data, function (value, key) {
                     /*
                     var state = {
                         "url": value.url,
@@ -59,7 +57,7 @@ angular.module('dynamic-states', ['ui.router'])
 
                     $stateProviderRef.state(value.name, state);
                 });
-                
+
 
                 // Configures $urlRouter's listener *after* your custom listener
                 $urlRouter.sync();

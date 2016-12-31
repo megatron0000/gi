@@ -1,0 +1,46 @@
+<h1><code ng:non-bindable="">EvaluatedAnswersController</code>
+<div><span class="hint">controller in module <code ng:non-bindable="">assessmentAnalysis</code>
+</span>
+</div>
+</h1>
+<div><h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$scope">$scope</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/assessmentAnalysis.service:UserStatisticsFactory">UserStatisticsFactory</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$stateParams">$stateParams</a></code>
+</li>
+</ul>
+<h2 id="description">Description</h2>
+<div class="description"><div class="assessmentanalysis-controller-page assessmentanalysis-controller-evaluatedanswerscontroller-page"><p>Existe para apresentar a resolução da prova a um usuário (com questões
+corrigidas). Também organiza questões por disciplina.</p>
+</div></div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_$scopeanalysisbysubject" class="nonSpecified ">$scope.analysisBySubject</h3>
+<div class="$scopeanalysisbysubject"><a style="float:left;margin-right:10px;" href="#/api/integer" class="label type-hint type-hint-integer">integer</a><div style="display:flex"><div class="assessmentanalysis-controller-page assessmentanalysis-controller-evaluatedanswerscontroller-scope-analysisbysubject-page"><p>Faz referência a duas formas de apresentação dos acertos do
+usuário por disciplina dentro da página de análise individual:
+Análise por questão e Percentual de acerto.</p>
+<p>Valor <strong>1</strong> corresponde a <strong>Análise por questão</strong>;</p>
+<p>Valor <strong>2</strong> corresponde a <strong>Percentual de acerto</strong></p>
+</div></div><div style='clear:both;'></div></div>
+</li>
+<li><h3 id="properties_$scopecorrectcount" class="nonSpecified ">$scope.correctCount</h3>
+<div class="$scopecorrectcount"><a style="float:left;margin-right:10px;" href="#/api/integer" class="label type-hint type-hint-integer">integer</a><div style="display:flex"><div class="assessmentanalysis-controller-page assessmentanalysis-controller-evaluatedanswerscontroller-scope-correctcount-page"><p>Contador da quantidade de questões acertadas pelo usuário
+identificado por <code>$stateParams.username</code> na prova especificada
+por <code>$stateParams.assessmentId</code></p>
+</div></div><div style='clear:both;'></div></div>
+</li>
+<li><h3 id="properties_$scopeevaluatedquestionlist" class="nonSpecified ">$scope.evaluatedQuestionList</h3>
+<div class="$scopeevaluatedquestionlist"><a style="float:left;margin-right:10px;" href="#/api/assessmentAnalysis.type:EvaluatedUserResponse" class="label type-hint type-hint-array">Array&lt;EvaluatedUserResponse&gt;</a><div style="display:flex"><div class="assessmentanalysis-controller-page assessmentanalysis-controller-evaluatedanswerscontroller-scope-evaluatedquestionlist-page"><p>Lista com as questões de determinada prova, da maneira como o
+usuário as respondeu.</p>
+</div></div><div style='clear:both;'></div></div>
+</li>
+<li><h3 id="properties_$scopesortedquestionlist" class="nonSpecified ">$scope.sortedQuestionList</h3>
+<div class="$scopesortedquestionlist"><a style="float:left;margin-right:10px;" href="#/api/assessmentAnalysis.type:SortedUserResponse" class="label type-hint type-hint-array">Array&lt;SortedUserResponse&gt;</a><div style="display:flex"><div class="assessmentanalysis-controller-page assessmentanalysis-controller-evaluatedanswerscontroller-scope-sortedquestionlist-page"><p>Informações usadas para exibir ao usuário seu
+resultado na prova, analisando disciplinas
+separadamente.</p>
+</div></div><div style='clear:both;'></div></div>
+</li>
+</ul>
+</div>
+</div>

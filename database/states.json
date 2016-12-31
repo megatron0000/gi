@@ -37,7 +37,7 @@
         "url": "preencherGabarito/",
         "views": {
             "head@": {
-                "template": "<h1>Preencha seu gabarito</h1><p>Coloque o nome no final, e não deixe nenhuma questão em branco ;)</p><p>Nas questões de língua espanhola, marque qualquer coisa. Só vamos contar as respostas de uma das provas de língua estrangeira</p>"
+                "template": "<h1>Preencha seu gabarito</h1><p>Coloque o nome no final, e não deixe nenhuma questão em branco ;)</p>"
             },
             "body@": {
                 "templateUrl": "views/sendUserAnswers.html",
@@ -63,7 +63,7 @@
         "url": ":username/",
         "views": {
             "head@": {
-                "template": "<h1>Logo, logo, análises mais completas do que um simples gabarito...</h1>"
+                "template": "<h1>Vários erros do sistema nas provas 4...</h1>"
             },
             "body@": {
                 "templateUrl": "views/userPerformance.html",
@@ -72,15 +72,25 @@
         }
     },
     {
-        "name": "root.assessment.checkUserPerformance.individualUserTEST",
-        "url": ":username/TEST",
+        "name": "root.groupPerformance",
+        "url": "desempenho-da-sala/",
         "views": {
             "head@": {
-                "template": "<h1>Logo, logo, análises mais completas do que um simples gabarito...</h1>"
+                "template": "<h2>Em caso de erro, tire <i>print</i> da janela 'ferramentas de desenvolvedor' do navegador que estiver usando."
             },
             "body@": {
-                "templateUrl": "views/userPerformanceTEST.html",
-                "controller": "EvaluatedAnswersController"
+                "templateUrl": "views/groupPerformance.html",
+                "controller": "GroupStatisticsController"
+            }
+        }
+    },
+    {
+        "name": "root.machineLearning",
+        "url": "machine-learning/",
+        "views": {
+            "body@": {
+                "templateUrl": "views/machineLearning.html",
+                "controller": "MachineLearningController"
             }
         }
     }
