@@ -2,3 +2,5 @@
 temp/
 node_modules/
 *.sublime-*
+docs/
+database/

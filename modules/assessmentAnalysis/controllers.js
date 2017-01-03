@@ -1,6 +1,8 @@
 angular.module("assessmentAnalysis")
     /**
      * @ngdoc      controller
+     * @deprecated
+     * @module     assessmentAnalysis
      * @name       assessmentAnalysis.controller:AssessmentListController
      * @requires   $scope
      * @requires   assessmentAnalysis.service:AssessmentFactory
@@ -11,28 +13,29 @@ angular.module("assessmentAnalysis")
      *                                                                                 provas
      */
     .controller("AssessmentListController", ["$scope", "AssessmentFactory", "$timeout",
-        function ($scope, AssessmentFactory, $timeout) {
+        function($scope, AssessmentFactory, $timeout) {
             AssessmentFactory.getAssessmentList().then(
-                function (response) {
+                function(response) {
                     $scope.assessments = response;
                 }
             );
         }
-        ])
-    /**
-     * @ngdoc       controller
-     * @name        assessmentAnalysis.controller:SendAnswersController
-     * @requires    $scope
-     * @requires    $stateParams
-     * @requires    assessmentAnalysis.service:AssessmentFactory
-     * @requires    assessmentAnalysis.service:AnswerRecordFactory
-     * @description
-     *
-     * Controller exibido para o usuário no state correspondente ao envio de
-     * gabarito para o servidor.
-     */
-    .controller("SendAnswersController", ["$scope", "$stateParams", "AssessmentFactory", "AnswerRecordFactory",
-        function ($scope, $stateParams, AssessmentFactory, AnswerRecordFactory) {
+    ])
+
+/**
+ * @ngdoc       controller
+ * @name        assessmentAnalysis.controller:SendAnswersController
+ * @requires    $scope
+ * @requires    $stateParams
+ * @requires    assessmentAnalysis.service:AssessmentFactory
+ * @requires    assessmentAnalysis.service:AnswerRecordFactory
+ * @description
+ *
+ * Controller exibido para o usuário no state correspondente ao envio de
+ * gabarito para o servidor.
+ */
+.controller("SendAnswersController", ["$scope", "$stateParams", "AssessmentFactory", "AnswerRecordFactory",
+        function($scope, $stateParams, AssessmentFactory, AnswerRecordFactory) {
             /**
              * @ngdoc       property
              * @propertyOf  assessmentAnalysis.controller:SendAnswersController
@@ -99,14 +102,14 @@ angular.module("assessmentAnalysis")
              * Fazer o download de $scope.currentAssessment e montar o $scope.userAnswers
              */
             AssessmentFactory.getAssessment($stateParams.assessmentId).then(
-                function (response) {
+                function(response) {
                     /**
                      * Montar o objeto de respostas do usuário
                      */
                     $scope.currentAssessment = response;
                     $scope.userAnswers.assessmentId = $scope.currentAssessment.assessmentId;
                     $scope.currentAssessment.questions.forEach(
-                        function (current, index, array) {
+                        function(current, index, array) {
                             /**
                              * @ngdoc       property
                              * @propertyOf  assessmentAnalysis.type:RawUserResponse
@@ -151,14 +154,14 @@ angular.module("assessmentAnalysis")
              * ``$scope.submitButtonDisabled`` como for conveniente a cada
              * momento.
              */
-            $scope.submitUserAnswers = function () {
+            $scope.submitUserAnswers = function() {
                 $scope.submitButtonDisabled = true;
                 $scope.submitButtonMessage = "Enviando...";
                 /**
                  * Verificar se há algum erro com o objeto $scope.userAnswers, antes de enviar
                  */
                 var thereIsError = false;
-                (function () {
+                (function() {
                     var errorMessage = "";
                     var errorObj = AnswerRecordFactory.checkForError($scope.userAnswers);
                     thereIsError = errorObj.errorExists();
@@ -175,11 +178,11 @@ angular.module("assessmentAnalysis")
                 })();
 
                 if (!thereIsError) {
-                    AnswerRecordFactory.uploadAnswers($scope.userAnswers).then(function () {
+                    AnswerRecordFactory.uploadAnswers($scope.userAnswers).then(function() {
                         alert("Respostas enviadas muito bem!");
                         $scope.submitButtonDisabled = false;
                         $scope.submitButtonMessage = "Enviar gabarito";
-                    }, function (response) {
+                    }, function(response) {
                         alert("Houve erro no envio.\nContate um admin.");
                         $scope.submitButtonDisabled = false;
                         $scope.submitButtonMessage = "Enviar gabarito";
@@ -190,7 +193,7 @@ angular.module("assessmentAnalysis")
                 }
             };
         }
-        ])
+    ])
     /**
      * @ngdoc       controller
      * @name        assessmentAnalysis.controller:UserListController
@@ -209,15 +212,15 @@ angular.module("assessmentAnalysis")
      * prova específica.
      */
     .controller("UserListController", ["$scope", "$stateParams", "UserStatisticsFactory",
-        function ($scope, $stateParams, UserStatisticsFactory) {
+        function($scope, $stateParams, UserStatisticsFactory) {
             $scope.userList = [];
             UserStatisticsFactory.getUserList($stateParams.assessmentId).then(
-                function (response) {
+                function(response) {
                     $scope.userList = response;
                 }
             );
         }
-        ])
+    ])
     /**
      * @ngdoc       controller
      * @name        assessmentAnalysis.controller:EvaluatedAnswersController
@@ -230,7 +233,7 @@ angular.module("assessmentAnalysis")
      * corrigidas). Também organiza questões por disciplina.
      */
     .controller("EvaluatedAnswersController", ["$scope", "UserStatisticsFactory", "$stateParams",
-        function ($scope, UserStatisticsFactory, $stateParams) {
+        function($scope, UserStatisticsFactory, $stateParams) {
             /**
              * @ngdoc       property
              * @propertyOf  assessmentAnalysis.controller:EvaluatedAnswersController
@@ -243,7 +246,7 @@ angular.module("assessmentAnalysis")
              */
             $scope.evaluatedQuestionList = [];
             UserStatisticsFactory.getEvaluatedQuestions($stateParams.assessmentId, $stateParams.username).then(
-                function (response) {
+                function(response) {
                     $scope.evaluatedQuestionList = response;
                     /**
                      * @ngdoc       property
@@ -256,10 +259,10 @@ angular.module("assessmentAnalysis")
                      * identificado por ``$stateParams.username`` na prova especificada
                      * por ``$stateParams.assessmentId``
                      */
-                    $scope.correctCount = (function () {
+                    $scope.correctCount = (function() {
                         var count = 0;
                         $scope.evaluatedQuestionList.forEach(
-                            function (current, index, array) {
+                            function(current, index, array) {
                                 current.correctAnswer === current.userAnswer ? count++ : null;
                             }
                         );
@@ -297,15 +300,15 @@ angular.module("assessmentAnalysis")
              */
             $scope.sortedQuestionList = [];
             UserStatisticsFactory.getSortedQuestions($stateParams.assessmentId, $stateParams.username).then(
-                function (sortedQuestionList) {
+                function(sortedQuestionList) {
                     $scope.sortedQuestionList = sortedQuestionList;
                     console.debug(sortedQuestionList);
                 }
             );
 
 
-         }
-         ])
+        }
+    ])
     /**
      * @ngdoc      controller
      * @name       assessmentAnalysis.controller:GroupStatisticsController
@@ -321,7 +324,7 @@ angular.module("assessmentAnalysis")
      *  - Questões de certa prova, analisadas por dificuldade (dificuldade é definida arbitrariamente)
      */
     .controller("GroupStatisticsController", ["$scope", "GroupStatisticsFactory", "AssessmentFactory", "HighchartsDataLogicFactory",
-        function ($scope, GroupStatisticsFactory, AssessmentFactory, HighchartsDataLogicFactory) {
+        function($scope, GroupStatisticsFactory, AssessmentFactory, HighchartsDataLogicFactory) {
 
             /**
              * @ngdoc      property
@@ -331,7 +334,7 @@ angular.module("assessmentAnalysis")
              */
             $scope.assessments = [];
             AssessmentFactory.getAssessmentList().then(
-                function (response) {
+                function(response) {
                     $scope.assessments = response;
                 }
             );
@@ -379,7 +382,7 @@ angular.module("assessmentAnalysis")
                  * selectedAssessment} e construir o Array "series" usado pelo
                  * highcharts
                  */
-                setConfiguration: function () {
+                setConfiguration: function() {
                     /**
                      * Array de 'series' do highchart. A primeira série é do desempenho
                      * geral; as outras são de disciplinas individuais
@@ -389,7 +392,7 @@ angular.module("assessmentAnalysis")
                     var series = [];
                     return GroupStatisticsFactory.getAssessmentOverallPerformance($scope.performanceChart.selectedAssessment).then(
                         HighchartsDataLogicFactory.buildUserSeries,
-                        function () {
+                        function() {
                             //$scope.performanceChart.config.series = [];
                             return [];
                         }
@@ -467,20 +470,20 @@ angular.module("assessmentAnalysis")
              */
             $scope.questionListChart = {
                 selectedAssessment: 0,
-                setConfiguration: function () {
+                setConfiguration: function() {
                     var series = [];
                     return GroupStatisticsFactory.getAssessmentQuestionPerformance($scope.questionListChart.selectedAssessment).then(
-                        function (questionListBySubject) {
+                        function(questionListBySubject) {
                             //  Iterar por cada disciplina, criando uma série para cada
                             questionListBySubject.forEach(
-                                function (currentSubject) {
+                                function(currentSubject) {
                                     series.push({
                                         name: currentSubject.subject,
                                         data: []
                                     });
                                     //  Iterar por todas as questões de uma disciplina
                                     currentSubject.questionList.forEach(
-                                        function (currentQuestion) {
+                                        function(currentQuestion) {
                                             //  Colocar um ponto na série desta disciplina
                                             series[series.length - 1].data.push({
                                                 x: currentQuestion.questionNumber,
@@ -491,7 +494,7 @@ angular.module("assessmentAnalysis")
                                         }
                                     );
                                     //  Highcharts exige que "data" esteja ordenado por X crescente. Tenho que fazer isso
-                                    series[series.length - 1].data.sort(function (a, b) {
+                                    series[series.length - 1].data.sort(function(a, b) {
                                         if (a.x < b.x)
                                             return -1;
                                         else if (a.x > b.x)
@@ -504,7 +507,7 @@ angular.module("assessmentAnalysis")
                             // $scope.questionListChart.config.series = series;
                             return series;
                         },
-                        function () {
+                        function() {
                             // $scope.questionListChart.config.series = [];
                             return [];
                         }
@@ -566,7 +569,7 @@ angular.module("assessmentAnalysis")
             };
 
             $scope.$watch('performanceChart.selectedAssessment', () => {
-                $scope.performanceChart.setConfiguration().then((readySeries)=>{
+                $scope.performanceChart.setConfiguration().then((readySeries) => {
                     $scope.performanceChart.config.series = readySeries;
                 });
             }, true);
@@ -577,13 +580,13 @@ angular.module("assessmentAnalysis")
             }, true);
 
         }
-        ])
+    ])
     //
     .controller("MachineLearningController", ["$scope", "GroupStatisticsFactory", "UserStatisticsFactory", "AssessmentFactory", "baseURL", "$q", "$http",
-        function ($scope, GroupStatisticsFactory, UserStatisticsFactory, AssessmentFactory, baseURL, $q, $http) {
+        function($scope, GroupStatisticsFactory, UserStatisticsFactory, AssessmentFactory, baseURL, $q, $http) {
 
             $scope.assessments = [];
-            AssessmentFactory.getAssessmentList().then(function (list) {
+            AssessmentFactory.getAssessmentList().then(function(list) {
                 $scope.assessments = list;
             });
             $scope.selectedAssessment = 0;
@@ -601,10 +604,10 @@ angular.module("assessmentAnalysis")
                 $scope.userOrderList = "";
 
                 GroupStatisticsFactory.getAssessmentOverallPerformance($scope.selectedAssessment).then(
-                    function (performanceBySubject) {
+                    function(performanceBySubject) {
                         //  Este forEach() preenche completamente o $scope.assessmentOverallPerformance
                         performanceBySubject.forEach(
-                            function (user, userIndex, userArray) {
+                            function(user, userIndex, userArray) {
                                 var listBySubject = user.listBySubject;
                                 $scope.assessmentOverallPerformance[user.username] = [];
                                 for (var i = 0; i < listBySubject.length; i++) {
@@ -618,7 +621,7 @@ angular.module("assessmentAnalysis")
                                         $scope.assessmentOverallPerformance[user.username] = $scope.assessmentOverallPerformance[user.username].concat(questionList);
                                     }
                                 }
-                                $scope.assessmentOverallPerformance[user.username].sort(function (a, b) {
+                                $scope.assessmentOverallPerformance[user.username].sort(function(a, b) {
                                     if (a.questionNumber < b.questionNumber)
                                         return -1;
                                     return +1;
@@ -639,15 +642,16 @@ angular.module("assessmentAnalysis")
             // Código para visualização das dificuldades das perguntas
             $scope.questionListChart = {
                 selectedAssessment: 0,
-                setConfiguration: function () {
+                setConfiguration: function() {
                     var series = [];
 
                     $q.all(
-                        [GroupStatisticsFactory.getAssessmentQuestionPerformance($scope.questionListChart.selectedAssessment),
-                        $http.get(baseURL + "ml/questoesProva1.json")]
+                            [GroupStatisticsFactory.getAssessmentQuestionPerformance($scope.questionListChart.selectedAssessment),
+                                $http.get(baseURL + "ml/questoesProva1.json")
+                            ]
                         ) // /$q.all
                         .then(
-                            function (difficultyAndSubjectList) {
+                            function(difficultyAndSubjectList) {
                                 questionListBySubject = difficultyAndSubjectList[0];
                                 questionDifficultyList = difficultyAndSubjectList[1].data;
                                 //  Corrigir a redundância de níveis
@@ -655,21 +659,21 @@ angular.module("assessmentAnalysis")
                                     questionDifficultyList[i] = questionDifficultyList[i][0];
 
                                 //  Eliminar Espanhol
-                                questionListBySubject.splice(questionListBySubject.findIndex(function (element, index, array) {
+                                questionListBySubject.splice(questionListBySubject.findIndex(function(element, index, array) {
                                     if (element.subject === "Espanhol")
                                         return true;
                                 }), 1);
 
                                 //  Iterar por cada disciplina, criando uma série para cada
                                 questionListBySubject.forEach(
-                                    function (currentSubject) {
+                                    function(currentSubject) {
                                         series.push({
                                             name: currentSubject.subject,
                                             data: []
                                         });
                                         //  Iterar por todas as questões de uma disciplina
                                         currentSubject.questionList.forEach(
-                                            function (currentQuestion) {
+                                            function(currentQuestion) {
                                                 //  Colocar um ponto na série desta disciplina
                                                 series[series.length - 1].data.push({
                                                     x: currentQuestion.questionNumber,
@@ -680,7 +684,7 @@ angular.module("assessmentAnalysis")
                                             }
                                         );
                                         //  Highcharts exige que "data" esteja ordenado por X crescente. Tenho que fazer isso
-                                        series[series.length - 1].data.sort(function (a, b) {
+                                        series[series.length - 1].data.sort(function(a, b) {
                                             if (a.x < b.x)
                                                 return -1;
                                             else if (a.x > b.x)
@@ -692,7 +696,7 @@ angular.module("assessmentAnalysis")
                                 console.debug(series);
                                 $scope.questionListChart.config.series = series;
                             },
-                            function (response) {
+                            function(response) {
                                 console.log(response);
                             }
                         ); //  $q.all().then()
@@ -756,4 +760,4 @@ angular.module("assessmentAnalysis")
             $scope.$watch('selectedAssessment', setupData);
 
         } //  /MachineLearningController function
-        ]); //  /MachineLearningController
+    ]); //  /MachineLearningController

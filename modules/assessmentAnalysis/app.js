@@ -1,5 +1,6 @@
 /**
  * @ngdoc overview
+ * @module assessmentAnalysis
  * @name assessmentAnalysis
  * @requires ui.router
  * @description

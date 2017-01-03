@@ -41,9 +41,9 @@ angular.module("assessmentAnalysis")
              *                                                             página")</pre>
              *
              */
-            this.getAssessmentList = function () {
+            this.getAssessmentList = function() {
                 return $http.get(baseURL + "database/assessmentData/answerSheets.min.json").then(
-                    function (response) {
+                    function(response) {
                         /**
                          * @ngdoc       type
                          * @name        assessmentAnalysis.type:RawAssessment
@@ -63,7 +63,7 @@ angular.module("assessmentAnalysis")
                          */
                         return response.data;
                     },
-                    function (response) {
+                    function(response) {
                         alert("Erro no recebimento de dados... recarregue a página.");
                         return $q.reject();
                     });
@@ -87,12 +87,12 @@ angular.module("assessmentAnalysis")
              *                                                      retorna
              *                                                      ``$q.reject()``
              */
-            this.getAssessment = function (assessmentId) {
+            this.getAssessment = function(assessmentId) {
                 if (typeof assessmentId === "string") {
                     assessmentId = parseInt(assessmentId);
                 }
                 return this.getAssessmentList().then(
-                    function (response) {
+                    function(response) {
                         for (var i = 0; i < response.length; i++) {
                             if (response[i].assessmentId === assessmentId) {
                                 return response[i];
@@ -101,7 +101,7 @@ angular.module("assessmentAnalysis")
                         //  Se não encontrar a prova procurada,
                         return $q.reject();
                     },
-                    function (response) {
+                    function(response) {
                         return $q.reject();
                     }
                 );
@@ -120,7 +120,7 @@ angular.module("assessmentAnalysis")
      *  Conecta-se ao servidor para receber ou enviar gabaritos de um aluno.
      */
     .service("AnswerRecordFactory", ["$http", "baseURL", "$q",
-        function ($http, baseURL, $q) {
+        function($http, baseURL, $q) {
 
             /**
              * @ngdoc method
@@ -130,13 +130,13 @@ angular.module("assessmentAnalysis")
              * @return     {assessmentAnalysis.type:Array<RawUserResponse>} ``$Promise`` cujo contexto é a lista de respostas de todos os usuários (essa lista inclui todas as provas misturadas). <br><br> Se houver erro, alerta "Erro no recebimento de dados... recarregue a página", e retorna ``$q.reject()``
              * 
              */
-            this.getRecord = function (disableCache) {
+            this.getRecord = function(disableCache) {
                 var no_cache = disableCache ? "?" + new Date().toISOString() : "";
                 return $http.get(baseURL + "database/assessmentData/userAnswers.min.json" + no_cache).then(
-                    function (response) {
+                    function(response) {
                         return response.data;
                     },
-                    function (response) {
+                    function(response) {
                         alert("Erro no recebimento de dados... recarregue a página.");
                         return $q.reject();
                     }
@@ -151,12 +151,12 @@ angular.module("assessmentAnalysis")
              * @param      {integer}  assessmentId  O id único da prova desejada
              * @return     {assessmentAnalysis.type:RawUserResponse}    $Promise cujo contexto é o Object de respostas do usuário na prova pedida.<br><br>Caso haja erro de recebimento, retorna ``$q.reject()``
              */
-            this.getUserAnswers = function (username, assessmentId) {
+            this.getUserAnswers = function(username, assessmentId) {
                 if (typeof assessmentId === "string") {
                     assessmentId = parseInt(assessmentId);
                 }
                 return this.getRecord().then(
-                    function (allUsersRecord) {
+                    function(allUsersRecord) {
                         for (var i = 0; i < allUsersRecord.length; i++) {
                             if (allUsersRecord[i].username === username && allUsersRecord[i].assessmentId === assessmentId) {
                                 return allUsersRecord[i];
@@ -164,7 +164,7 @@ angular.module("assessmentAnalysis")
                         }
                         return $q.reject();
                     },
-                    function (response) {
+                    function(response) {
                         return $q.reject();
                     }
                 );
@@ -179,10 +179,10 @@ angular.module("assessmentAnalysis")
              * 
              * Envia respostas do usuário ao servidor e, em seguida, faz ``console.debug()`` no eco da resposta e chama {@link assessmentAnalysis.service:AnswerRecordFactory#getRecord getRecord} sem cache para sobrescrever a versão local agora antiquada
              */
-            this.uploadAnswers = function (answerObj) {
+            this.uploadAnswers = function(answerObj) {
                 var getRecord = this.getRecord;
                 return $http.post(baseURL + "database/post.php", answerObj).then(
-                    function (response) {
+                    function(response) {
                         console.debug(response);
                         // Fazer chamada para sobrescrever o cache
                         getRecord( /**true para sobrescrever o cache*/ true);
@@ -197,7 +197,7 @@ angular.module("assessmentAnalysis")
              *
              * @return     {assessmentAnalysis.type:SubmissionErrorDetail} ``Object`` que descreve os tipos de erro que aconteceram com a entrada
              */
-            this.checkForError = function (answerObj) {
+            this.checkForError = function(answerObj) {
                 /**
                  * @ngdoc type
                  * @name assessmentAnalysis.type:SubmissionErrorDetail
@@ -219,7 +219,7 @@ angular.module("assessmentAnalysis")
                      * @returns {boolean} Se algum erro foi encontrado (de qualquer tipo que seja)
                      *
                      */
-                    errorExists: function () {
+                    errorExists: function() {
                         return this.templateError || this.usernameError || this.answerError;
                     },
                     missingQuestions: []
@@ -231,7 +231,7 @@ angular.module("assessmentAnalysis")
                 if (!answerObj.username) {
                     errorObj.usernameError = true;
                 }
-                answerObj.answerList.forEach(function (current, index, array) {
+                answerObj.answerList.forEach(function(current, index, array) {
                     if (!current.answer) {
                         errorObj.answerError = true;
                         errorObj.missingQuestions.push(current.questionNumber);
@@ -253,7 +253,7 @@ angular.module("assessmentAnalysis")
      * Expõe os resultados de um usuário em qualquer prova desejada. O formato das respostas pode ser uma lista ordenada por número da questão ou uma lista organizada por matéria.
      */
     .service("UserStatisticsFactory", ["$q", "AssessmentFactory", "AnswerRecordFactory",
-        function ($q, AssessmentFactory, AnswerRecordFactory) {
+        function($q, AssessmentFactory, AnswerRecordFactory) {
             /**
              * @ngdoc method
              * @methodOf assessmentAnalysis.service:UserStatisticsFactory
@@ -267,24 +267,24 @@ angular.module("assessmentAnalysis")
              * <pre>alert("Não foi possível encontrar quem fez esta prova...\nRecarregue a página.");
              * return $q.reject();</pre>
              */
-            this.getUserList = function (assessmentId) {
+            this.getUserList = function(assessmentId) {
                 if (typeof assessmentId === "string") {
                     assessmentId = parseInt(assessmentId);
                 }
                 var userList = [];
                 return AnswerRecordFactory.getRecord().then(
-                    function (response) {
+                    function(response) {
                         if (!response) {
                             return [];
                         }
-                        response.forEach(function (current, index, array) {
+                        response.forEach(function(current, index, array) {
                             if (!userList.includes(current.username) && current.assessmentId === assessmentId) {
                                 userList.push(current.username);
                             }
                         });
                         return userList;
                     },
-                    function () {
+                    function() {
                         alert("Não foi possível encontrar quem fez esta prova...\nRecarregue a página.");
                         return $q.reject();
                     }
@@ -303,30 +303,30 @@ angular.module("assessmentAnalysis")
              * Chama {@link assessmentAnalysis.service:AssessmentFactory AssessmentFactory} e {@link assessmentAnalysis.service:AnswerRecordFactory AnswerRecordFactory} para depois processar dados recebidos e retornar respostas.<br><br>Em caso de erro no recebimento, executa
              * <pre>return $q.reject();</pre>
              */
-            this.getEvaluatedQuestions = function (assessmentId, username) {
+            this.getEvaluatedQuestions = function(assessmentId, username) {
                 var correctAnswers = [];
                 var userAnswers = [];
 
                 return $q.all([
-                    AssessmentFactory.getAssessment(assessmentId).then(
-                            function (desiredAssessment) {
+                        AssessmentFactory.getAssessment(assessmentId).then(
+                            function(desiredAssessment) {
                                 correctAnswers = desiredAssessment.questions;
                             },
-                            function () {
+                            function() {
                                 return $q.reject();
                             }
-                    ),
-                    AnswerRecordFactory.getUserAnswers(username, assessmentId).then(
-                            function (_userAnswers_) {
+                        ),
+                        AnswerRecordFactory.getUserAnswers(username, assessmentId).then(
+                            function(_userAnswers_) {
                                 userAnswers = _userAnswers_;
                             },
-                            function () {
+                            function() {
                                 return $q.reject();
                             }
-                    )
-                ])
+                        )
+                    ])
                     .then(
-                        function () {
+                        function() {
                             /**
                              * @ngdoc type
                              * @name assessmentAnalysis.type:EvaluatedUserResponse
@@ -336,7 +336,7 @@ angular.module("assessmentAnalysis")
                              * @property {string} subject Matéria à qual pertence a questão (matemática, português, etc.) 
                              */
                             var evaluatedQuestionList = [];
-                            correctAnswers.forEach(function (current, index, array) {
+                            correctAnswers.forEach(function(current, index, array) {
                                 evaluatedQuestionList.push({
                                     questionNumber: current.questionNumber,
                                     correctAnswer: current.correctAnswer,
@@ -346,7 +346,7 @@ angular.module("assessmentAnalysis")
                             });
                             return evaluatedQuestionList;
                         },
-                        function () {
+                        function() {
                             return $q.reject();
                         }
                     );
@@ -366,9 +366,9 @@ angular.module("assessmentAnalysis")
              * Em caso de erro, executa:
              * <pre>return $q.reject();</pre>
              */
-            this.getSortedQuestions = function (assessmentId, username) {
+            this.getSortedQuestions = function(assessmentId, username) {
                 return this.getEvaluatedQuestions(assessmentId, username).then(
-                    function (evaluatedQuestionList) {
+                    function(evaluatedQuestionList) {
                         /**
                          * Lista de strings (cada uma é uma matéria)
                          *
@@ -376,7 +376,7 @@ angular.module("assessmentAnalysis")
                          */
                         var subjectList = [];
                         evaluatedQuestionList.forEach(
-                            function (current, index, array) {
+                            function(current, index, array) {
                                 if (!subjectList.includes(current.subject)) {
                                     subjectList.push(current.subject);
                                 }
@@ -395,7 +395,7 @@ angular.module("assessmentAnalysis")
                          * Note que há redundância: a matéria à qual pertencem as questões está definida tanto em ``SortedUserResponse.subject`` quanto em cada questão pertencente a ``SortedUserResponse.questionList``                         
                          */
                         var sortedQuestionList = [];
-                        subjectList.forEach(function (current, index, array) {
+                        subjectList.forEach(function(current, index, array) {
                             sortedQuestionList.push({
                                 subject: current,
                                 questionList: [],
@@ -403,7 +403,7 @@ angular.module("assessmentAnalysis")
                             });
                         });
                         //  Preenche sortedQuestionList
-                        sortedQuestionList.forEach(function (currentQuestionList, index, array) {
+                        sortedQuestionList.forEach(function(currentQuestionList, index, array) {
                             var currentSubject = currentQuestionList.subject;
                             for (var i = 0; i < evaluatedQuestionList.length; i++) {
                                 if (evaluatedQuestionList[i].subject === currentSubject) {
@@ -414,7 +414,7 @@ angular.module("assessmentAnalysis")
                         //  Coloca questões certas na frente. Tudo em ordem alfabética
                         for (var i = 0; i < sortedQuestionList.length; i++) {
                             sortedQuestionList[i].questionList.sort(
-                                function (a, b) {
+                                function(a, b) {
                                     if (a.userAnswer === a.correctAnswer && b.userAnswer !== b.correctAnswer) {
                                         return -1;
                                     } else if (a.userAnswer !== a.correctAnswer && b.userAnswer === b.correctAnswer) {
@@ -435,7 +435,7 @@ angular.module("assessmentAnalysis")
 
                         return sortedQuestionList;
                     },
-                    function () {
+                    function() {
                         return $q.reject();
                     }
                 );
@@ -456,10 +456,10 @@ angular.module("assessmentAnalysis")
      * segundo, expõe nível de dificuldade das questões.
      */
     .service("GroupStatisticsFactory", ["UserStatisticsFactory", "$q",
-        function (UserStatisticsFactory, $q) {
+        function(UserStatisticsFactory, $q) {
 
 
-            var recursiveGetSortedQuestions = function (remainingIterationsCount, assessmentId, username, userCollectionArray, whereToStore) {
+            var recursiveGetSortedQuestions = function(remainingIterationsCount, assessmentId, username, userCollectionArray, whereToStore) {
                 // Se não houver nenhum usuário ainda,
                 if (userCollectionArray.length === 0)
                     return $q.reject();
@@ -467,7 +467,7 @@ angular.module("assessmentAnalysis")
                 if (remainingIterationsCount < 0)
                     return;
                 return UserStatisticsFactory.getSortedQuestions(assessmentId, username).then(
-                    function (sortedQuestionList) {
+                    function(sortedQuestionList) {
                         whereToStore.push({
                             username: username,
                             listBySubject: sortedQuestionList,
@@ -476,25 +476,25 @@ angular.module("assessmentAnalysis")
                         });
                         return recursiveGetSortedQuestions(remainingIterationsCount - 1, assessmentId, userCollectionArray[remainingIterationsCount - 1], userCollectionArray, whereToStore);
                     },
-                    function () {
+                    function() {
                         return $q.reject();
                     }
                 );
             };
 
-            var getOverallCorrectCount = function (listBySubject) {
+            var getOverallCorrectCount = function(listBySubject) {
                 var count = 0;
                 listBySubject.forEach(
-                    function (current, index, array) {
+                    function(current, index, array) {
                         count += current.correctCount;
                     }
                 );
                 return count;
             };
 
-            var getAssessmentLength = function (userAnswers) {
+            var getAssessmentLength = function(userAnswers) {
                 var count = 0;
-                userAnswers.listBySubject.forEach(function (current, index, array) {
+                userAnswers.listBySubject.forEach(function(current, index, array) {
                     count += current.questionList.length;
                 });
                 return count;
@@ -513,9 +513,9 @@ angular.module("assessmentAnalysis")
              * <pre>return $q.reject();</pre>
              * 
              */
-            this.getAssessmentOverallPerformance = function (assessmentId) {
+            this.getAssessmentOverallPerformance = function(assessmentId) {
                 return UserStatisticsFactory.getUserList(assessmentId).then(
-                    function (response) {
+                    function(response) {
                         /**
                          * @ngdoc type
                          * @name assessmentAnalysis.type:IdentifiedSortedUserResponse
@@ -532,19 +532,19 @@ angular.module("assessmentAnalysis")
                          */
                         var overallSortedQuestions = [];
                         return recursiveGetSortedQuestions(response.length - 1, assessmentId, response[response.length - 1], response, overallSortedQuestions).then(
-                            function () {
+                            function() {
                                 //  Contar qual a quantidade de questões da prova
                                 var assessmentLength = getAssessmentLength(overallSortedQuestions[0]); //  Claro que poderia ser em outro índice, fora o 0
                                 //  Contar quantos acertos no total, para cada usuário
                                 overallSortedQuestions.forEach(
-                                    function (current, index, array) {
+                                    function(current, index, array) {
                                         current.overallCorrectCount = getOverallCorrectCount(current.listBySubject);
                                         current.assessmentLength = assessmentLength;
                                     }
                                 );
                                 //  Colocar usuários em ordem crescente de acertos totais
                                 overallSortedQuestions.sort(
-                                    function (a, b) {
+                                    function(a, b) {
                                         if (a.overallCorrectCount < b.overallCorrectCount)
                                             return -1;
                                         else if (a.overallCorrectCount > b.overallCorrectCount)
@@ -554,7 +554,7 @@ angular.module("assessmentAnalysis")
                                 );
                                 return overallSortedQuestions;
                             },
-                            function () {
+                            function() {
                                 return $q.reject();
                             }
                         );
@@ -576,9 +576,9 @@ angular.module("assessmentAnalysis")
              * Em caso de erro, executa:
              * <pre>return $q.reject();</pre>
              */
-            this.getAssessmentQuestionPerformance = function (assessmentId) {
+            this.getAssessmentQuestionPerformance = function(assessmentId) {
                 return this.getAssessmentOverallPerformance(assessmentId).then(
-                    function (overallSortedQuestions) {
+                    function(overallSortedQuestions) {
                         /**
                          * @ngdoc type
                          * @name assessmentAnalysis.type:SortedQuestionPerformance
@@ -595,12 +595,12 @@ angular.module("assessmentAnalysis")
                         if (overallSortedQuestions.length === 0)
                             return;
                         //  Descobrir quais são as matérias desta prova, e inserir todas as questões em sua devida posição no Array
-                        overallSortedQuestions[0].listBySubject.forEach(function (current, index, array) {
+                        overallSortedQuestions[0].listBySubject.forEach(function(current, index, array) {
                             questionListBySubject.push({
                                 subject: current.subject,
                                 questionList: []
                             });
-                            current.questionList.forEach(function (currentQuestion, currentQuestionIndex, questionListArray) {
+                            current.questionList.forEach(function(currentQuestion, currentQuestionIndex, questionListArray) {
                                 questionListBySubject[questionListBySubject.length - 1].questionList.push({
                                     questionNumber: currentQuestion.questionNumber,
                                     numberOfCorrectAnswers: 0,
@@ -609,18 +609,18 @@ angular.module("assessmentAnalysis")
                             });
                         });
                         //  Decidir quantos acertos houve para cada questão
-                        questionListBySubject.forEach(function (currentSubject) {
-                            currentSubject.questionList.forEach(function (currentQuestion) {
-                                overallSortedQuestions.forEach(function (currentUser) {
+                        questionListBySubject.forEach(function(currentSubject) {
+                            currentSubject.questionList.forEach(function(currentQuestion) {
+                                overallSortedQuestions.forEach(function(currentUser) {
                                     var userQuestion = currentUser.listBySubject
                                         //  
-                                        .find(function (element) {
+                                        .find(function(element) {
                                             if (element.subject === currentSubject.subject)
                                                 return element;
                                             return undefined;
                                         }).questionList
                                         //
-                                        .find(function (element) {
+                                        .find(function(element) {
                                             if (element.questionNumber === currentQuestion.questionNumber)
                                                 return element;
                                             return undefined;
@@ -635,9 +635,9 @@ angular.module("assessmentAnalysis")
                         console.debug(questionListBySubject);
                         // Colocar questões em ordem crescente de número
                         questionListBySubject.forEach(
-                            function (subject) {
+                            function(subject) {
                                 subject.questionList.sort(
-                                    function (a, b) {
+                                    function(a, b) {
                                         if (parseInt(a.questionNumber) < parseInt(b.questionNumber))
                                             return -1;
                                         return 1;
@@ -647,7 +647,7 @@ angular.module("assessmentAnalysis")
                         );
                         return questionListBySubject;
                     },
-                    function () {
+                    function() {
                         return $q.reject();
                     }
                 );
@@ -665,7 +665,7 @@ angular.module("assessmentAnalysis")
      * no formato usado pelas configurações de um "highchart"
      */
     .service("HighchartsDataLogicFactory", [
-        function () {
+        function() {
             /**
              * @ngdoc      method
              * @methodOf   assessmentAnalysis.service:HighchartsDataLogicFactory
@@ -677,14 +677,14 @@ angular.module("assessmentAnalysis")
              * @returns    {Array}                            Séries dos desempenhos dos usuários
              * 
              */
-            this.buildUserSeries = function (arrayIdentifiedSortedUserResponse) {
+            this.buildUserSeries = function(arrayIdentifiedSortedUserResponse) {
                 let series = [];
                 if (arrayIdentifiedSortedUserResponse[0].listBySubject) {
                     series.push({
                         data: [],
                         name: "Desempenho geral"
                     });
-                    arrayIdentifiedSortedUserResponse[0].listBySubject.forEach(function (current, index, array) {
+                    arrayIdentifiedSortedUserResponse[0].listBySubject.forEach(function(current, index, array) {
                         series.push({
                             data: [],
                             name: current.subject
@@ -692,8 +692,8 @@ angular.module("assessmentAnalysis")
                     });
                 }
                 arrayIdentifiedSortedUserResponse.forEach(
-                    function (currentUser, userIndex, userArray) {
-                        series.forEach(function (currentSeries) {
+                    function(currentUser, userIndex, userArray) {
+                        series.forEach(function(currentSeries) {
                             //  Se estivermos no desempenho geral, empurrar dados para essa posição
                             if (currentSeries.name === "Desempenho geral") {
                                 currentSeries.data.push({
@@ -711,7 +711,7 @@ angular.module("assessmentAnalysis")
                                 //  Colocar esta série como invisível por padrão
                                 currentSeries.visible = false;
                                 //  Achar qual matéria, entre todas do usuário, corresponde à série atual
-                                var correspondingSubject = currentUser.listBySubject.find(function (element, index, array) {
+                                var correspondingSubject = currentUser.listBySubject.find(function(element, index, array) {
                                     if (element.subject === currentSeries.name)
                                         return element;
                                     return undefined;
@@ -744,7 +744,7 @@ angular.module("assessmentAnalysis")
              * 
              * @returns    {Array}  Série das dificuldades das questões
              */
-            this.buildQuestionSeries = function (difficultyAndSubjectList) {
+            this.buildQuestionSeries = function(difficultyAndSubjectList) {
                 let series = [];
                 questionListBySubject = difficultyAndSubjectList[0];
                 questionDifficultyList = difficultyAndSubjectList[1].data;
@@ -753,21 +753,21 @@ angular.module("assessmentAnalysis")
                     questionDifficultyList[i] = questionDifficultyList[i][0];
 
                 //  Eliminar Espanhol
-                questionListBySubject.splice(questionListBySubject.findIndex(function (element, index, array) {
+                questionListBySubject.splice(questionListBySubject.findIndex(function(element, index, array) {
                     if (element.subject === "Espanhol")
                         return true;
                 }), 1);
 
                 //  Iterar por cada disciplina, criando uma série para cada
                 questionListBySubject.forEach(
-                    function (currentSubject) {
+                    function(currentSubject) {
                         series.push({
                             name: currentSubject.subject,
                             data: []
                         });
                         //  Iterar por todas as questões de uma disciplina
                         currentSubject.questionList.forEach(
-                            function (currentQuestion) {
+                            function(currentQuestion) {
                                 //  Colocar um ponto na série desta disciplina
                                 series[series.length - 1].data.push({
                                     x: currentQuestion.questionNumber,
@@ -778,7 +778,7 @@ angular.module("assessmentAnalysis")
                             }
                         );
                         //  Highcharts exige que "data" esteja ordenado por X crescente. Tenho que fazer isso
-                        series[series.length - 1].data.sort(function (a, b) {
+                        series[series.length - 1].data.sort(function(a, b) {
                             if (a.x < b.x)
                                 return -1;
                             else if (a.x > b.x)
@@ -792,4 +792,4 @@ angular.module("assessmentAnalysis")
                 return series;
             }
         }
-     ]);
+    ]);
