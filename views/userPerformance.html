@@ -6,7 +6,7 @@
         </h3>
     </div>
     <div class="panel-body flex flex-row flex-wrap flex-justify-content-center">
-        <div ng-class="{'bg-primary': evaluatedQuestion.userAnswer === evaluatedQuestion.correctAnswer, 'bg-danger': evaluatedQuestion.userAnswer !== evaluatedQuestion.correctAnswer}" ng-repeat="evaluatedQuestion in evaluatedQuestionList" style="width: 40px; height: 40px; border-radius: 5px; margin:5px;">
+        <div ng-class="{'bg-primary': evaluatedQuestion.userAnswer === evaluatedQuestion.correctAnswer, 'bg-danger': evaluatedQuestion.userAnswer !== evaluatedQuestion.correctAnswer}" ng-repeat="evaluatedQuestion in evaluatedQuestionList" style="width: 45px; height: 45px; border-radius: 5px; margin:5px;">
             <div>
                 <div align="center" style="border-bottom: 1px solid gray;">
                     {{evaluatedQuestion.questionNumber}}
@@ -51,7 +51,7 @@
                     </span>
                 </div>
                 <div class="flex flex-row flex-wrap flex-justify-content-start" style="flex-basis:75%; flex-grow:3">
-                    <div ng-class="{'bg-primary': question.userAnswer === question.correctAnswer, 'bg-danger': question.userAnswer !== question.correctAnswer}" ng-repeat="question in subjectQuestions.questionList" style="width: 40px; height: 40px; border-radius: 5px; margin:5px;">
+                    <div ng-class="{'bg-primary': question.userAnswer === question.correctAnswer, 'bg-danger': question.userAnswer !== question.correctAnswer}" ng-repeat="question in subjectQuestions.questionList" style="width: 45px; height: 45px; border-radius: 5px; margin:5px;">
                         <div>
                             <div align="center" style="border-bottom: 1px solid gray;">
                                 {{question.questionNumber}}

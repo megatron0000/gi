@@ -14,7 +14,7 @@ angular.module("main", ["angular-treant", "ui.router", "dynamic-states", "angula
      * 
      * String representativa do endereço http do servidor
      */
-    .constant("baseURL", "http://localhost:8000/")
+    .constant("baseURL", "http://baudelaplace.net23.net/gi/")
     /**
      * @ngdoc constant
      * @name main.constant:dynamic_states_dbLocation
@@ -27,3 +27,45 @@ angular.module("main", ["angular-treant", "ui.router", "dynamic-states", "angula
      * 
      */
     .constant("dynamic_states_dbLocation", "database/states.min.json");
+
+
+/**
+ * @ngdoc function
+ * @name main.function:examples
+ * @description
+ * 
+ * <example module="assessmentAnalysis"  deps="styles/backgrounds.css">
+ * <file name="appfile.js">
+ *      angular.module("assessmentAnalysis", []);
+ * </file>
+ *  <file name="controller.js">
+ *      angular.module("assessmentAnalysis").controller("dummyController", function($scope) {
+ *          $scope.message="Oi, eu sou Goku!";
+ *      });
+ *  </file>
+ *  <file name="custom.css">
+ *  h4 {
+ *      text-decoration-line: line-through;
+ *  }
+ *  </file>
+ *  <file name="index.html">
+ *     <h1 ng-controller="dummyController">{{message}}</h1>
+ *  </file>
+ * </example>
+ * 
+ * <file src="modules/main/doc.js"></file>
+ * 
+ * <example module="ngAppDemo">
+ *    <file name="index.html">
+ *    <div ng-controller="ngAppDemoController">
+ *      I can add: {{a}} + {{b}} =  {{ a+b }}
+ *    </div>
+ *    </file>
+ *    <file name="script.js">
+ *    angular.module('ngAppDemo', []).controller('ngAppDemoController', function($scope) {
+ *      $scope.a = 1;
+ *      $scope.b = 2;
+ *    });
+ *    </file>
+ *  </example>
+ */

@@ -197,12 +197,21 @@ NG_DOCS={
       "moduleName": "main",
       "shortDescription": "String representativa do endereço http onde estão definidos os &quot;states&quot; do site (usados no &quot;config&quot; do UI-router).",
       "keywords": "api baseurl config constant definidos endere est este http main observe onde os relativa representativa site string ui-router uma url"
+    },
+    {
+      "section": "api",
+      "id": "main.function:examples",
+      "shortName": "examples",
+      "type": "function",
+      "moduleName": "main",
+      "shortDescription": "Source",
+      "keywords": "$scope add angular api appfile assessmentanalysis controller css custom deps dummycontroller eu function goku h4 html js line-through main message module modules ng-controller ngappdemo ngappdemocontroller oi script sou src styles text-decoration-line"
     }
   ],
   "apis": {
     "api": true
   },
-  "html5Mode": true,
+  "html5Mode": false,
   "editExample": true,
   "startPage": "/api",
   "scripts": [

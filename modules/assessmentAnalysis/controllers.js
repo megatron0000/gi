@@ -47,6 +47,7 @@ angular.module("assessmentAnalysis")
              * Controla se o botão de envio está clicável ou não. Torna-o
              * inclicável durante o envio das respostas (para que seja
              * impossível mandar várias vezes).
+             * 
              */
             $scope.submitButtonDisabled = false;
             /**

@@ -3,7 +3,9 @@
     Aqui, alteramos esse padrão
 */
 
-body, .container.wsite-content, .container-fluid.wsite-content {
+body,
+.container.wsite-content,
+.container-fluid.wsite-content {
     background-color: rgb(248, 236, 194);
 }
 
@@ -48,5 +50,5 @@ body, .container.wsite-content, .container-fluid.wsite-content {
 }
 
 .checkedInput {
-    background-color:  #d9534f;
+    background-color: #d9534f;
 }

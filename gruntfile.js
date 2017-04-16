@@ -9,10 +9,12 @@
             ngdocs: {
                 options: {
                     //scripts: ['angular.js', '../src.js'],
-                    html5Mode: true,
+                    html5Mode: false,
                     dest: 'docs',
                     title: 'Documentação do site do GI',
-                    inlinePartials: false //default
+                    inlinePartials: false, //default
+                    bestMatch: true
+                        // styles: ['styles/backgrounds.css'],
                         // scripts: ['modules/**/*.js'] No wildcards -_- just moves to docs/grunt-scripts
                         // image: './img/logo.png'   just moves to docs/grunt-styles
                         // navContent = './some/path/to/template'
