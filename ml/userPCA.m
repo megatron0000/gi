@@ -6,11 +6,12 @@ X = [0.25 0.6666666666666666 0.5 0.8 0.4 0.4 0.4666666666666667 0.58333333333333
 
 [U, S] = pca(X);
 
-Ured = U(:,1:3)
+Ured = U(:,1:3);
 
-fprintf('Vari√¢ncia retida');	(S(1,1)+S(2,2)+S(3,3))/sum(sum(S))
+fprintf('Vari‚ncia retida');	
+display((S(1,1)+S(2,2)+S(3,3))/sum(sum(S)))
 
-Xred = X * Ured
+Xred = X * Ured;
 
 plot3(Xred(:,1), Xred(:,2), Xred(:,3),'o');
 dx = 0.1 ; dy = 0.1 ; dz = 0.1;

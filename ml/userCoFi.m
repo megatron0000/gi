@@ -33,7 +33,7 @@ options = optimset('GradObj', 'on', 'MaxIter', 1000);
 % Set Regularization
 lambda = 0.4;
 
-[theta fX] = fmincg (@(t)(cofiCostFunc(t, Y, R, num_users, num_questions, num_features, lambda)), initial_parameters, options);
+[theta, fX] = fmincg (@(t)(cofiCostFunc(t, Y, R, num_users, num_questions, num_features, lambda)), initial_parameters, options);
 
 % Unfold the returned theta back into U and W
 X = reshape(theta(1:num_questions*num_features), num_questions, num_features);
@@ -44,12 +44,11 @@ Theta;
 
 
 threshold = 0:0.01:1;
+precision = zeros(length(threshold),1);
 for i=1:length(threshold)
-	precision(i) = sum(sum((sigmoid(X*Theta') >= threshold(i))==Y)) / (size(Y)(1) * size(Y)(2));
+	precision(i) = sum(sum((sigmoid(X*Theta') >= threshold(i))==Y)) / (size(Y,1) * size(Y,2));
 end
 
 plot(threshold,precision);
-% 
-
 
 save questoesProva1.mat X Theta;
