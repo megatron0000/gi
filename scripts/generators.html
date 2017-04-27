@@ -1,23 +1,24 @@
 <html>
+
     <body>
     </body>
     <script>
-
         var howManyQuestions = 120;
-    	var correctAnswerArray = ["b", "b", "a", "d", "d", "a", "c", "d", "a", "e", "b", "d", "a", "d", "b", "b", "b", "b", "e", "b", "e", "d", "b", "a", "d", "e", "b", "a", "b", "d", "e", "b", "c", "b" ,"d", "e", "c", "e", "d", "c", "c", "e", "b", "d", "d", "d", "c", "a", "a", "b", "e", "b", "c", "a", "b", "d", "b", "c", "a", "d"];
-    	var returnValue = [];
-    	var printCategory = function(questionNumber) {
-    		return ["a", "b", "c", "d", "e"];
-    	}
-    	console.info(correctAnswerArray.length);
-    	for (var i = 1 ; i <= howManyQuestions ; i++) {
-    		returnValue.push({
-    			"questionNumber": i,
-    			"possibleAnswers": printCategory(i),
-    			"correctAnswer": correctAnswerArray[i-1],
-    			"subject": ""
-    		});
-    	}
-    	console.log(JSON.stringify(returnValue));
+        var correctAnswerArray = ["b", "b", "a", "d", "d", "a", "c", "d", "a", "e", "b", "d", "a", "d", "b", "b", "b", "b", "e", "b", "e", "d", "b", "a", "d", "e", "b", "a", "b", "d", "e", "b", "c", "b", "d", "e", "c", "e", "d", "c", "c", "e", "b", "d", "d", "d", "c", "a", "a", "b", "e", "b", "c", "a", "b", "d", "b", "c", "a", "d"];
+        var returnValue = [];
+        var printCategory = function(questionNumber) {
+            return ["a", "b", "c", "d", "e"];
+        }
+        console.info(correctAnswerArray.length);
+        for (var i = 1; i <= howManyQuestions; i++) {
+            returnValue.push({
+                "questionNumber": i,
+                "possibleAnswers": printCategory(i),
+                "correctAnswer": correctAnswerArray[i - 1],
+                "subject": ""
+            });
+        }
+        console.log(JSON.stringify(returnValue));
     </script>
+
 </html>
