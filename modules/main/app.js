@@ -14,7 +14,7 @@ angular.module("main", ["angular-treant", "ui.router", "dynamic-states", "angula
      * 
      * String representativa do endereço http do servidor
      */
-    .constant("baseURL", "http://baudelaplace.net23.net/gi/")
+    .constant("baseURL", "http://old.baudelaplace.xyz/gi/")
     /**
      * @ngdoc constant
      * @name main.constant:dynamic_states_dbLocation
